@@ -1,11 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { financeApi } from './financeSlice'
+import financeReducer from './financeSlice'
 export const store = configureStore({
   reducer:{
-    [financeApi.reducerPath]: financeApi.reducer,
+    finance:financeReducer,
   },
-  middleware: (getDefaultMiddleware) =>[
-    ...getDefaultMiddleware(),
-    financeApi.middleware
-  ]
 })
